@@ -23,6 +23,14 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+        'urlManager' => [
+        'enablePrettyUrl' => true,
+        'showScriptName' => false,
+        'rules' => [
+            'POST application/create' => 'application/create',
+            'POST application/update/<id:\d+>' => 'application/update',
+            ],
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
